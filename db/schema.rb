@@ -10,13 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021212449) do
+ActiveRecord::Schema.define(version: 20161021230508) do
+
+  create_table "characters", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "quotes", force: :cascade do |t|
+    t.string   "text"
+    t.string   "audio_path"
+    t.integer  "character_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["character_id"], name: "index_quotes_on_character_id"
+  end
 
   create_table "videos", force: :cascade do |t|
     t.string   "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "video"
+    t.integer  "quote_id"
+    t.index ["quote_id"], name: "index_videos_on_quote_id"
   end
 
 end

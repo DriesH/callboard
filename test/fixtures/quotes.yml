@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  text: MyString
+  audio_path: MyString
+  character: one
+
+two:
+  text: MyString
+  audio_path: MyString
+  character: two

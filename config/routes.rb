@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'main/home'
+  get 'main/show_character/:character', to: 'main#show_character', as: 'show_character'
+  get 'main/show/:token', to: 'main#show'
   post 'main/upload'
 
   root 'main#home'
