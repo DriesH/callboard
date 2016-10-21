@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'main/home'
+  post 'main/upload'
 
   root 'main#home'
 

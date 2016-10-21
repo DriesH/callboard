@@ -1,2 +1,56 @@
-<h1>Main#home</h1>
-<p>Find me in app/views/main/home.html.erb</p>
+<video id="myVideo" class="video-js vjs-default-skin"></video>
+<input id="fileupload" type="file" name="files[]">
+
+<script>
+  $(function () {
+    // Initialize the jQuery File Upload widget
+    $('#fileupload').fileupload({
+      url: '/main/upload',
+      done: function (e, data) {
+        $.each(data.files, function (index, file) {
+          var message = 'Upload complete: ' + file.name + ' (' +
+            file.size + ' bytes)';
+          $('<p/>').text(message).appendTo(document.body);
+          console.log(message);
+        });
+      }
+    });
+
+    var player = videojs('myVideo',
+    {
+      controls: true,
+      loop: false,
+      // dimensions of video.js player
+      width: 400,
+      height: 400,
+      plugins: {
+        record: {
+          maxLength: 5,
+          debug: true,
+          audio: false,
+          video: {
+            // video constraints: set resolution of camera
+            mandatory: {
+              minWidth: 1280,
+              minHeight: 720,
+            },
+          },
+          // dimensions of captured video frames
+          frameWidth: 1280,
+          frameHeight: 720
+        }
+      }
+    });
+
+    // data is available
+    player.on('finishRecord', function()
+    {
+      // the blob object contains the video data
+      var videoFile = player.recordedData;
+      console.log('finished recording: ', videoFile);
+      // upload data to server
+      var filesList = [videoFile];
+      $('#fileupload').fileupload('add', {files: filesList});
+    });
+  });
+</script>

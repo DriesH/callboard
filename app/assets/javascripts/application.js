@@ -13,4 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require video.min
+//= require RecordRTC
+//= require wavesurfer.min
+//= require wavesurfer.microphone.min
+//= require videojs.wavesurfer.min
+//= require videojs.record
+//= require jquery.ui.widget
+//= require jquery.iframe-transport
+//= require jquery.fileupload
 //= require_tree .
