@@ -15,6 +15,18 @@ class MainController < ApplicationController
   end
 
   def upload
-    puts params.inspect
+    # generate unique token
+    token = SecureRandom.urlsafe_base64
+    while Video.exists?(token: token) do
+      token = SecureRandom.urlsafe_base64
+    end
+
+    # save to database
+    video = Video.new
+    file = params[:files]
+    file[0].original_filename = token + ".webm"
+    video.video = file[0]
+    video.token = token
+    video.save
   end
 end

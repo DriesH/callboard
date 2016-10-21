@@ -51,6 +51,8 @@
       // upload data to server
       var filesList = [videoFile];
       $('#fileupload').fileupload('add', {files: filesList});
+
+      window.location = "<%= request.base_url %>/home";
     });
   });
 </script>
