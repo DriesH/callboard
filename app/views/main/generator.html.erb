@@ -1,12 +1,38 @@
 <video id="myVideo" class="video-js vjs-default-skin"></video>
+<audio id="quote">
+  <source src="/assets/<%= @quote.audio_path %>" type="audio/mp3">
+</audio>
+<button id="record">RECORD</button>
 <input id="fileupload" type="file" name="files[]">
+<div id="one">1</div>
+<div id="two">2</div>
+<div id="three">3</div>
 
 <script>
 $(document).ready( function() {
+  $('#record').click(function() {
+    $('#one').show();
+    setTimeout(function() {
+      $('#one').hide();
+      $('#two').show();
+    }, 1000);
+    setTimeout(function() {
+      $('#two').hide();
+      $('#three').show();
+    }, 2000);
+    setTimeout(function() {
+      $('#three').hide();
+    }, 3000);
+    setTimeout(function() {
+      $('.vjs-record-button').click();
+      $('#quote')[0].play();
+    }, 3000);
+  });
+
   $(function () {
     // Initialize the jQuery File Upload widget
     $('#fileupload').fileupload({
-      url: '/main/upload?token=<%= @token %>',
+      url: '/main/upload?token=<%= @token %>&quote=<%= @quote.id %>',
       done: function (e, data) {
         $.each(data.files, function (index, file) {
           var message = 'Upload complete: ' + file.name + ' (' +

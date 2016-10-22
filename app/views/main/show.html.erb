@@ -1,3 +1,6 @@
-<video width="350px" height="350px" autoplay loop>
+<video width="350px" height="350px" autoplay>
   <source src="<%= @video.video %>" type="video/webm">
 </video>
+<audio id="quote" autoplay>
+  <source src="/assets/<%= @quote.audio_path %>" type="audio/mp3">
+</audio>

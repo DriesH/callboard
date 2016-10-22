@@ -17,3 +17,11 @@
 #fileupload {
   display: none;
 }
+
+.vjs-control-bar {
+  display: none !important;
+}
+
+#quote, #one, #two, #three {
+  display: none;
+}
