@@ -245,9 +245,14 @@ a:hover {
 .share-btn {
     margin-top: 25px;
     padding: 20px;
-    background-color: white;
+    background-color: #FF7A00;
+    border: #EE00EB;
     border-radius: 5px;
     text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #fff;
 }
 
 .share-btn:hover {
