@@ -10,12 +10,21 @@ class MainController < ApplicationController
     @character = Character.find_by_name(params[:character])
   end
 
-  def generator
-    @token = SecureRandom.urlsafe_base64
+  def get_token
+    token = SecureRandom.urlsafe_base64
+
     while Video.exists?(token: @token) do
-      @token = SecureRandom.urlsafe_base64
+      token = SecureRandom.urlsafe_base64
     end
 
+    @data = { token: "#{token}" }.to_json
+
+    respond_to do |format|
+      format.json { render json: @data }
+    end
+  end
+
+  def generator
     @quote = Quote.find(params[:quote])
   end
 
@@ -25,7 +34,6 @@ class MainController < ApplicationController
   end
 
   def upload
-    puts "PARAMETERS ======================= #{params.inspect}"
     # save to database
     video = Video.new
     file = params[:files]
