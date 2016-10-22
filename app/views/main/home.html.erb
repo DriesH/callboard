@@ -1,58 +1,68 @@
-<div id="wrap">
-  <div class="container">
-   <div class="row">
-     <div class="col-md-2 banner">
-       <img src="/assets/banner-gifs/banner-vert.gif" class="img-responsive banner-vert" alt="" />
-     </div>
-     <div class="col-md-8">
-       <div class="row">
-         <img id="callboard-logo" class="col-md-6 col-md-push-3 col-xs-12" src="/assets/logos/CALLBOARDLOGO.png" alt="callboard-logo" />
-       </div>
-       <div class="row">
-         <div class="col-md-3">
-           <div class="thumbnail callboy-box">
-             <div class="profile-pic">
-               <img src="/assets/callboys-profile-pictures/devon.png" class="img-responsive" alt="devon" />
-             </div>
-             <%= link_to 'Devon', show_character_path(@characters.first.name), class: 'dildo-link animated', id: 'devon' %>
-           </div>
-         </div>
-         <div class="col-md-3">
-           <div class="thumbnail callboy-box">
-             <div class="profile-pic">
-               <img src="/assets/callboys-profile-pictures/jay.png" class="img-responsive" alt="jay" />
-             </div>
-             <%= link_to 'Jay', show_character_path(@characters.second.name), class: 'dildo-link animated', id: 'jay' %>
-           </div>
-         </div>
-         <div class="col-md-3">
-           <div class="thumbnail callboy-box">
-             <div class="profile-pic">
-               <img src="/assets/callboys-profile-pictures/randy.png" class="img-responsive" alt="randy" />
-             </div>
-             <%= link_to 'Randy', show_character_path(@characters.third.name), class: 'dildo-link animated', id: 'randy' %>
-           </div>
-         </div>
-         <div class="col-md-3">
-           <div class="thumbnail callboy-box">
-             <div class="profile-pic">
-               <img src="/assets/callboys-profile-pictures/wes.png" class="img-responsive" alt="wesley" />
-             </div>
-             <%= link_to 'Wesley', show_character_path(@characters.fourth.name), class: 'dildo-link animated', id: 'wesley' %>
-           </div>
-         </div>
-       </div>
-       <div class="row">
-         <div class="col-md-8 col-md-push-2">
-           <p class="uitleg-text">
-             Op deze pagina kan je een dubsmash maken, van je favoriete callboy!
-           </p>
-         </div>
-       </div>
-     </div>
-     <div class="col-md-2 banner">
-       <img src="/assets/banner-gifs/banner-vert.gif" class="img-responsive banner-vert" alt="" />
-     </div>
-   </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 banner">
+      <img src="/assets/banner-gifs/banner-vert.gif" class="img-responsive banner-vert" alt="" />
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <img id="callboard-logo" class="col-md-6 col-md-push-3 col-xs-12" src="/assets/logos/CALLBOARDLOGO.png" alt="callboard-logo" />
+      </div>
+      <div class="row">
+        <div class="col-md-3 callboy-box">
+          <%= link_to show_character_path(@characters.first.name) do %>
+            <div class="top">
+              <img src="/assets/callboys-profile-pictures/devon.png" alt="" class="img-rounded">
+            </div>
+            <div class="bottom">
+              <span class="dildo-link animated" id="devon"></span>
+              <h1>Devon</h1>
+            </div>
+              <% end %>
+        </div>
+        <div class="col-md-3 callboy-box">
+          <%= link_to show_character_path(@characters.second.name) do %>
+            <div class="top">
+              <img src="/assets/callboys-profile-pictures/jay.png" alt="" class="img-rounded">
+            </div>
+            <div class="bottom">
+              <span class="dildo-link animated" id="jay"></span>
+              <h1>Jay</h1>
+            </div>
+            <% end %>
+        </div>
+        <div class="col-md-3 callboy-box">
+          <%= link_to show_character_path(@characters.third.name) do %>
+            <div class="top">
+              <img src="/assets/callboys-profile-pictures/randy.png" alt="" class="img-rounded">
+            </div>
+            <div class="bottom">
+              <span class="dildo-link animated" id="randy"></span>
+              <h1>Randy</h1>
+            </div>
+            <% end %>
+        </div>
+        <div class="col-md-3 callboy-box">
+          <%= link_to show_character_path(@characters.fourth.name) do %>
+            <div class="top">
+              <img src="/assets/callboys-profile-pictures/wes.png" alt="" class="img-rounded">
+            </div>
+            <div class="bottom">
+              <span class="dildo-link animated" id="wesley"></span>
+              <h1>Wesley</h1>
+            </div>
+            <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-md-push-2">
+          <p class="uitleg-text">
+            Op deze pagina kan je een dubsmash maken, van je favoriete callboy!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2 banner">
+      <img src="/assets/banner-gifs/banner-vert.gif" class="img-responsive banner-vert" alt="" />
+    </div>
   </div>
 </div>

@@ -9,7 +9,7 @@ html, body {
 }
 
 #wrap {
-    background: url('/assets/backgrounds/background-1920-1080.png');
+    background: url('/assets/backgrounds/background-with-dots.gif');
     background-position: center;
     background-size: cover;
     min-height: 100vh;
@@ -17,11 +17,7 @@ html, body {
     width: 100%;
 }
 
-.container {
-    width: 100%;
-}
-
-a {
+a, h1 {
     font-family: 'Lazer84', cursive;
     color: black;
 }
@@ -45,7 +41,33 @@ a:hover {
 .callboy-box {
     background: url('/assets/callboys-profile-pictures/rectangle_thumbnail_bg2.png') no-repeat;
     background-size: contain;
+    background-position: center;
     height: 390px;
+}
+
+.callboy-box > a {
+    display: block;
+    height: 100%;
+}
+
+.callboy-box > a > .top {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 10%;
+}
+
+.callboy-box > a > .top img {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+
+.callboy-box > a > .bottom h1 {
+    text-align: center;
+}
+
+.callboy-box > a > .bottom span {
+    height: 7vh;
 }
 
 .profile-pic img {
@@ -88,10 +110,6 @@ a:hover {
 
 .banner-vert{
     margin: 0 auto;
-}
-
-.quote-link {
-    display: block;
 }
 
 /* IMAGE LINKS VOOR ELKE VERSCHILLENDE DILDO */
@@ -151,7 +169,71 @@ a:hover {
 
 .quote-box {
     background: url('/assets/callboys-profile-pictures/rectangle_quote_bg.png') no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 840px;
+    background-size: 100% 100%;
+    height: 80vh;
+}
+
+.quote-box > .profile-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.quote-box > .profile-pic img {
+    width: 85%;
+}
+
+.quote-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.quote-list > ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 0;
+    width: 100%;
+}
+
+.quote-list > ul > li {
+    flex: 1 0 33%;
+    margin: 1%;
+    height: 5em;
+    background-color: white;
+    border: 1px black solid;
+}
+
+.quote-list > ul > li > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.share-btn {
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    display: block;
+}
+
+.share-btn:hover {
+    background-color: black;
+}
+
+@media screen and (max-width: 720px) {
+    .banner {
+        display: none;
+    }
 }

@@ -1,6 +1,26 @@
-<%= @character.name %>
-<% @character.quotes.each do |quote| %>
-  <p>
-    <%= link_to quote.text, generator_path(quote) %>
-  </p>
-<% end %>
+
+
+
+  <div class="container">
+    <div class="row">
+      <img id="callboard-logo" class="col-md-6 col-md-push-3 col-xs-12" src="/assets/logos/CALLBOARDLOGO.png" alt="callboard-logo" />
+    </div>
+    <div class="row quote-box">
+      <h2><%= @character.name %></h2>
+      <div class="col-md-3 profile-pic">
+        <img src="/assets/callboys-profile-pictures/jay.png" alt="jay" />
+      </div>
+      <div class="col-md-9 quote-list">
+        <ul>
+          <% @character.quotes.each do |quote| %>
+
+
+                <li><a href=""><%= link_to quote.text, generator_path(quote) %></a></li>
+
+
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+  </div>
