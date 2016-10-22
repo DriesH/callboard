@@ -11,6 +11,13 @@ class MainController < ApplicationController
   end
 
   def generator
+    # generate unique token
+    @token = SecureRandom.urlsafe_base64
+    while Video.exists?(token: @token) do
+      @token = SecureRandom.urlsafe_base64
+    end
+
+    @quote = Quote.find(params[:quote])
     # record yourself
     # upload video
     # return url
@@ -21,15 +28,10 @@ class MainController < ApplicationController
   end
 
   def upload
-    # generate unique token
-    token = SecureRandom.urlsafe_base64
-    while Video.exists?(token: token) do
-      token = SecureRandom.urlsafe_base64
-    end
-
     # save to database
     video = Video.new
     file = params[:files]
+    token = params[:token]
     file[0].original_filename = token + ".webm"
     video.video = file[0]
     video.token = token

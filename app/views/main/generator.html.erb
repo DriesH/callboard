@@ -2,6 +2,7 @@
 <input id="fileupload" type="file" name="files[]">
 
 <script>
+$(document).ready( function() {
   $(function () {
     // Initialize the jQuery File Upload widget
     $('#fileupload').fileupload({
@@ -50,9 +51,10 @@
       console.log('finished recording: ', videoFile);
       // upload data to server
       var filesList = [videoFile];
-      $('#fileupload').fileupload('add', {files: filesList});
+      $('#fileupload').fileupload('add', {files: filesList, token: "<%= @token %>"});
 
-      window.location = "<%= request.base_url %>/main/home";
+      window.location = "<%= request.base_url %>/main/show/<%= @token %>";
     });
   });
+});
 </script>

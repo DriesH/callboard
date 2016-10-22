@@ -1,4 +1,6 @@
 <%= @character.name %>
 <% @character.quotes.each do |quote| %>
-  <p><%= quote.text %></p>
+  <p>
+    <%= link_to quote.text, generator_path(quote) %>
+  </p>
 <% end %>
