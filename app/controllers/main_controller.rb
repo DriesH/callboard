@@ -28,13 +28,15 @@ class MainController < ApplicationController
   end
 
   def upload
+    puts "PARAMETERS ======================= #{params.inspect}"
     # save to database
     video = Video.new
     file = params[:files]
     token = params[:token]
-    file[0].original_filename = token + ".webm"
+    file[0].original_filename = "#{token}.webm"
     video.video = file[0]
     video.token = token
     video.save
+    render nothing: true
   end
 end

@@ -6,7 +6,7 @@ $(document).ready( function() {
   $(function () {
     // Initialize the jQuery File Upload widget
     $('#fileupload').fileupload({
-      url: '/main/upload',
+      url: '/main/upload?token=<%= @token %>',
       done: function (e, data) {
         $.each(data.files, function (index, file) {
           var message = 'Upload complete: ' + file.name + ' (' +
@@ -26,7 +26,7 @@ $(document).ready( function() {
       height: 400,
       plugins: {
         record: {
-          maxLength: 5,
+          maxLength: 6,
           debug: true,
           audio: false,
           video: {
@@ -51,9 +51,11 @@ $(document).ready( function() {
       console.log('finished recording: ', videoFile);
       // upload data to server
       var filesList = [videoFile];
-      $('#fileupload').fileupload('add', {files: filesList, token: "<%= @token %>"});
+      $('#fileupload').fileupload('add', {files: filesList});
 
-      window.location = "<%= request.base_url %>/main/show/<%= @token %>";
+      setTimeout(function() {
+        window.location = "<%= request.base_url %>/main/show/<%= @token %>";
+      }, 2500);
     });
   });
 });
