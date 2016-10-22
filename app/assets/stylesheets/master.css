@@ -178,6 +178,7 @@ a:hover {
 
 .quote-box > .profile-pic {
     height: 100%;
+    padding-right: 0;
 }
 
 .profile-pic > h2 {
@@ -217,7 +218,7 @@ a:hover {
     flex: 1 0 33%;
     margin: 1%;
     padding: 10px;
-    height: 5em;
+    min-height: 5em;
     background-color: white;
     border: 1px black solid;
 }
