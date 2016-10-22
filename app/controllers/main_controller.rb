@@ -25,6 +25,7 @@ class MainController < ApplicationController
 
   def show
     @video = Video.find_by_token(params[:token])
+    @quote = @video.quote
   end
 
   def upload
@@ -36,6 +37,7 @@ class MainController < ApplicationController
     file[0].original_filename = "#{token}.webm"
     video.video = file[0]
     video.token = token
+    video.quote_id = params[:quote]
     video.save
     render nothing: true
   end
