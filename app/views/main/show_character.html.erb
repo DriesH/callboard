@@ -10,7 +10,7 @@
     <div class="col-md-9 quote-list">
       <ul>
         <% @character.quotes.each do |quote| %>
-          <li><a href=""><%= link_to quote.text, generator_path(quote) %></a></li>
+          <li><%= link_to quote.text, generator_path(quote) %></li>
         <% end %>
       </ul>
     </div>
