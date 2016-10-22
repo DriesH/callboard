@@ -198,7 +198,7 @@ a:hover {
     align-items: center;
     height: 100%;
     margin-left: 0;
-    padding-left: 0;
+    padding: 0 35px 35px;
 }
 
 .quote-list > ul {
