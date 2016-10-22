@@ -1,6 +1,4 @@
 $(document).ready(function () {
-    //banner anim
-
     console.log('ready');
 
     $(".callboy-box").hover(
