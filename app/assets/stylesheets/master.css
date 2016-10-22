@@ -6,15 +6,17 @@
 
 html, body {
     height: 100%;
+    background: url('/assets/backgrounds/background-with-dots.gif') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
 #wrap {
-    background: url('/assets/backgrounds/background-with-dots.gif');
-    background-position: center;
-    background-size: cover;
-    min-height: 100vh;
-    max-height: 100%;
-    width: 100%;
 }
 
 a, h1 {
