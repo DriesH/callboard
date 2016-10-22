@@ -17,6 +17,7 @@ html, body {
 }
 
 #wrap {
+    padding-bottom: 50px;
 }
 
 a, h1 {
@@ -172,18 +173,23 @@ a:hover {
 .quote-box {
     background: url('/assets/callboys-profile-pictures/rectangle_quote_bg.png') no-repeat;
     background-size: 100% 100%;
-    height: 80vh;
+    min-height: 80vh;
 }
 
 .quote-box > .profile-pic {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100%;
 }
 
+.profile-pic > h2 {
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0px 10px 10px;
+}
+
 .quote-box > .profile-pic img {
-    width: 85%;
+    width: 80%;
+    padding: 25px 25px 0;
 }
 
 .quote-list {
@@ -191,6 +197,8 @@ a:hover {
     justify-content: center;
     align-items: center;
     height: 100%;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 .quote-list > ul {
@@ -208,6 +216,7 @@ a:hover {
 .quote-list > ul > li {
     flex: 1 0 33%;
     margin: 1%;
+    padding: 10px;
     height: 5em;
     background-color: white;
     border: 1px black solid;
