@@ -8662,3 +8662,75 @@ Processing by MainController#show as HTML
 Completed 200 OK in 101ms (Views: 94.3ms | ActiveRecord: 0.6ms)
 
 
+Started POST "/main/upload?token=iqTa31vypkKZvMiQi3rUYg&quote=2" for ::1 at 2016-10-22 07:14:17 +0200
+Processing by MainController#upload as */*
+  Parameters: {"files"=>[#<ActionDispatch::Http::UploadedFile:0x007f8fc86fa950 @tempfile=#<Tempfile:/var/folders/k2/cwzd2mf51z90x1hlz7vcbqtw0000gn/T/RackMultipart20161022-4538-8lyp9a.webm>, @original_filename="1477113257068.webm", @content_type="video/webm", @headers="Content-Disposition: form-data; name=\"files[]\"; filename=\"1477113257068.webm\"\r\nContent-Type: video/webm\r\n">], "token"=>"iqTa31vypkKZvMiQi3rUYg", "quote"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "videos" ("token", "created_at", "updated_at", "video", "quote_id") VALUES (?, ?, ?, ?, ?)[0m  [["token", "iqTa31vypkKZvMiQi3rUYg"], ["created_at", 2016-10-22 05:14:17 UTC], ["updated_at", 2016-10-22 05:14:17 UTC], ["video", "iqTa31vypkKZvMiQi3rUYg.webm"], ["quote_id", 2]]
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 42ms (Views: 0.6ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/main/show/iqTa31vypkKZvMiQi3rUYg" for ::1 at 2016-10-22 07:14:18 +0200
+Processing by MainController#show as HTML
+  Parameters: {"token"=>"iqTa31vypkKZvMiQi3rUYg"}
+  [1m[36mVideo Load (4.9ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."token" = ? LIMIT ?[0m  [["token", "iqTa31vypkKZvMiQi3rUYg"], ["LIMIT", 1]]
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering main/show.html.erb within layouts/application
+  Rendered main/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 157ms (Views: 143.2ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/main/show/iqTa31vypkKZvMiQi3rUYg" for ::1 at 2016-10-22 07:22:46 +0200
+Processing by MainController#show as HTML
+  Parameters: {"token"=>"iqTa31vypkKZvMiQi3rUYg"}
+  [1m[36mVideo Load (0.2ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."token" = ? LIMIT ?[0m  [["token", "iqTa31vypkKZvMiQi3rUYg"], ["LIMIT", 1]]
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering main/show.html.erb within layouts/application
+  Rendered main/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 106ms (Views: 99.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/main/generator/2" for ::1 at 2016-10-22 07:23:47 +0200
+Processing by MainController#generator as HTML
+  Parameters: {"quote"=>"2"}
+  [1m[36mVideo Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "videos" WHERE "videos"."token" = ? LIMIT ?[0m  [["token", "mKZTquApHXHl3ZzHc_vq-g"], ["LIMIT", 1]]
+  [1m[36mQuote Load (2.4ms)[0m  [1m[34mSELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering main/generator.html.erb within layouts/application
+  Rendered main/generator.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 184ms (Views: 172.4ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/main/upload?token=mKZTquApHXHl3ZzHc_vq-g&quote=2" for ::1 at 2016-10-22 07:24:07 +0200
+Processing by MainController#upload as */*
+  Parameters: {"files"=>[#<ActionDispatch::Http::UploadedFile:0x007f8fca69acd8 @tempfile=#<Tempfile:/var/folders/k2/cwzd2mf51z90x1hlz7vcbqtw0000gn/T/RackMultipart20161022-4538-1kbj8nn.webm>, @original_filename="1477113846926.webm", @content_type="video/webm", @headers="Content-Disposition: form-data; name=\"files[]\"; filename=\"1477113846926.webm\"\r\nContent-Type: video/webm\r\n">], "token"=>"mKZTquApHXHl3ZzHc_vq-g", "quote"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "videos" ("token", "created_at", "updated_at", "video", "quote_id") VALUES (?, ?, ?, ?, ?)[0m  [["token", "mKZTquApHXHl3ZzHc_vq-g"], ["created_at", 2016-10-22 05:24:07 UTC], ["updated_at", 2016-10-22 05:24:07 UTC], ["video", "mKZTquApHXHl3ZzHc_vq-g.webm"], ["quote_id", 2]]
+  [1m[35m (13.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 45ms (Views: 0.9ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/main/show/mKZTquApHXHl3ZzHc_vq-g" for ::1 at 2016-10-22 07:24:07 +0200
+Processing by MainController#show as HTML
+  Parameters: {"token"=>"mKZTquApHXHl3ZzHc_vq-g"}
+  [1m[36mVideo Load (0.3ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."token" = ? LIMIT ?[0m  [["token", "mKZTquApHXHl3ZzHc_vq-g"], ["LIMIT", 1]]
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering main/show.html.erb within layouts/application
+  Rendered main/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 112ms (Views: 100.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/main/generator/2" for ::1 at 2016-10-22 07:24:14 +0200
+Processing by MainController#generator as HTML
+  Parameters: {"quote"=>"2"}
+  [1m[36mVideo Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "videos" WHERE "videos"."token" = ? LIMIT ?[0m  [["token", "1b7065r9l6rhAOjEO5ZDTw"], ["LIMIT", 1]]
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering main/generator.html.erb within layouts/application
+  Rendered main/generator.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 66ms (Views: 61.3ms | ActiveRecord: 0.4ms)
+
+

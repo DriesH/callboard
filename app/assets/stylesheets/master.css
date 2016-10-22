@@ -8,6 +8,11 @@ video {
   background: #270029;
 }
 
+#myVideoWrapper {
+  border: 5px solid #FF8600;
+  background: #270029;
+}
+
 
 html, body {
     height: 100%;

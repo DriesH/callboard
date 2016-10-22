@@ -11,16 +11,12 @@ class MainController < ApplicationController
   end
 
   def generator
-    # generate unique token
     @token = SecureRandom.urlsafe_base64
     while Video.exists?(token: @token) do
       @token = SecureRandom.urlsafe_base64
     end
 
     @quote = Quote.find(params[:quote])
-    # record yourself
-    # upload video
-    # return url
   end
 
   def show
