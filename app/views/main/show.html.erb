@@ -1,6 +1,13 @@
-<video width="350px" height="350px" autoplay>
-  <source src="<%= @video.video %>" type="video/webm">
-</video>
-<audio id="quote" autoplay>
-  <source src="/assets/<%= @quote.audio_path %>" type="audio/mp3">
-</audio>
+<div class="container">
+  <div class="row">
+    <img id="callboard-logo" class="col-md-6 col-md-push-3 col-xs-12" src="/assets/logos/CALLBOARDLOGO.png" alt="callboard-logo" />
+  </div>
+  <div class="row video-row">
+    <video width="400px" height="400px" autoplay>
+      <source src="<%= @video.video %>" type="video/webm">
+    </video>
+    <audio id="quote" autoplay>
+      <source src="/assets/<%= @quote.audio_path %>" type="audio/mp3">
+    </audio>
+  </div>
+</div>

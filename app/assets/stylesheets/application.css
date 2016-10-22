@@ -25,3 +25,8 @@
 #quote, #one, #two, #three {
   display: none;
 }
+
+#one, #two, #three {
+  color: #fff;
+  font-size: 3em;
+}

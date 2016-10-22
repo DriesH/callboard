@@ -1,33 +1,25 @@
-<video id="myVideo" class="video-js vjs-default-skin"></video>
-<audio id="quote">
-  <source src="/assets/<%= @quote.audio_path %>" type="audio/mp3">
-</audio>
-<button id="record">RECORD</button>
-<input id="fileupload" type="file" name="files[]">
-<div id="one">1</div>
-<div id="two">2</div>
-<div id="three">3</div>
+<div class="container">
+  <div class="row">
+    <img id="callboard-logo" class="col-md-6 col-md-push-3 col-xs-12" src="/assets/logos/CALLBOARDLOGO.png" alt="callboard-logo" />
+  </div>
+  <div class="row video-row">
+    <h1 style="color: #FF8600; letter-spacing: 2px; font-size: 25px; line-height: 1.5;"><%= @quote.text %></h1>
+    <div id="myVideoWrapper">
+      <video id="myVideo" class="video-js vjs-default-skin"></video>
+    </div>
+    <audio id="quote">
+      <source src="/assets/<%= @quote.audio_path %>" type="audio/mp3">
+    </audio>
+    <h1 id="clickbutton" style="color: #FF8600; letter-spacing: 2px; font-size: 25px; line-height: 1.5;">Click on the black box to give camera access</h1>
+    <button id="record" class="share-btn" style="display: none;">RECORD</button>
+    <input id="fileupload" type="file" name="files[]">
+    <div id="one">3</div>
+    <div id="two">2</div>
+    <div id="three">1</div>
+  </div>
+</div>
 
 <script>
-$(document).ready( function() {
-  $('#record').click(function() {
-    $('#one').show();
-    setTimeout(function() {
-      $('#one').hide();
-      $('#two').show();
-    }, 1000);
-    setTimeout(function() {
-      $('#two').hide();
-      $('#three').show();
-    }, 2000);
-    setTimeout(function() {
-      $('#three').hide();
-    }, 3000);
-    setTimeout(function() {
-      $('.vjs-record-button').click();
-      $('#quote')[0].play();
-    }, 3000);
-  });
 
   $(function () {
     // Initialize the jQuery File Upload widget
@@ -69,6 +61,32 @@ $(document).ready( function() {
       }
     });
 
+$(document).ready( function() {
+  player.on('deviceReady', function()
+  {
+    $('#record').show();
+    $('#clickbutton').hide();
+  });
+
+  $('#record').click(function() {
+    $('#record').hide();
+    $('#one').show();
+    setTimeout(function() {
+      $('#one').hide();
+      $('#two').show();
+    }, 1000);
+    setTimeout(function() {
+      $('#two').hide();
+      $('#three').show();
+    }, 2000);
+    setTimeout(function() {
+      $('#three').hide();
+    }, 3000);
+    setTimeout(function() {
+      $('.vjs-record-button').click();
+      $('#quote')[0].play();
+    }, 3000);
+  });
     // data is available
     player.on('finishRecord', function()
     {
@@ -81,7 +99,7 @@ $(document).ready( function() {
 
       setTimeout(function() {
         window.location = "<%= request.base_url %>/main/show/<%= @token %>";
-      }, 2500);
+      }, 1000);
     });
   });
 });
